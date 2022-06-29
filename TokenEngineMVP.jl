@@ -163,7 +163,7 @@ Number of users: $N_control, Loyalty threshold $loyalty_threshold_control %, New
 """
 
 # ╔═╡ 0f474908-962d-47cd-8b9a-7ab461d64e6e
-@bind go Button("Run simulation")
+# @bind go Button("Run simulation")
 
 # ╔═╡ 657b8dd4-88a8-4a1b-9792-76ce5bacafa6
 function plot_output(results)
@@ -398,18 +398,18 @@ function run_simulation(
 end;
 
 # ╔═╡ 974fe823-a1a5-413b-8436-e1ef9014268b
-let 
-	go
+begin
+	# go
 	utilities = randn(N) * variance .+ mean # Utility functions
 	utilities[utilities .< 0] .= 0
-    results = run_simulation(
-        N,
+	results = run_simulation(
+		N,
 		utilities,
-        number_of_rounds,
+		number_of_rounds,
 		loyalty_threshold,
 		M,
 		item_price, 
-        new_items,
+		new_items,
 		new_airdropped_tokens,
 		new_exchange_tokens,
 		initial_token_price,
